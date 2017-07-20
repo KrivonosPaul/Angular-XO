@@ -194,7 +194,7 @@
 
         function computerLogic(index){//takes index of last user's step
             tracing(index,userTrace);
-            if(!compMakeStep(userTrace)&&!compMakeStep(compTrace)){
+            if(!compMakeStep(compTrace)&&!compMakeStep(userTrace)){
                 outerLoop:
                 for (var k = 0; k < 3; k++) {//if step doesn't require a logic - computer goes to the first empty cell on it's way
                     for (var l = 0; l < 3; l++) {
