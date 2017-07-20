@@ -1,0 +1,66 @@
+body{
+    margin:0;
+    padding:8px;
+    background-color: #615d61;
+    color: #3ac1ff;
+}
+header, footer{
+    height:90px;
+    text-align: center;
+    border:1px solid #3ac1ff;
+    border-radius: 5px;
+    background-color:rgba(58, 193, 255, 0.2);
+}
+h1, h2{
+    margin-bottom: 0;
+}
+h2{
+    margin-top:10px;
+}
+header p, footer p{
+    margin:0;
+}
+
+.gamestarter{
+    background: none;
+    border:none;
+    color:#3ac1ff;
+}
+
+main{
+    margin:5px auto;
+    height:474px;
+    width:474px;
+}
+.square{
+    float:left;
+    text-align:center;
+    border:1px solid #3ac1ff;
+    width:150px;
+    height:150px;
+    margin:3px;
+    background-color:rgba(58, 193, 255, 0.2);
+}
+.square:hover, .gamestarter:hover{
+    cursor: pointer;
+}
+.sign{
+    font-size:100px;
+}
+.checked{
+    color: #ff733c;
+}
+.infoblock{
+    position:absolute;
+    height:474px;
+    width:474px;
+    background-color: #9200ff;
+    border:1px solid #3ac1ff;
+    text-align: center;
+}
+.infoblock>div{
+    position:relative;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:25px;
+}

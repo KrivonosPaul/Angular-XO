@@ -1,0 +1,5 @@
+<div ng-repeat="line in field">
+    <div class="square" ng-repeat="square in line" ng-click="markSquare(square.index)">
+        <span class="sign" >{{square.sign}}</span>
+    </div>
+</div>

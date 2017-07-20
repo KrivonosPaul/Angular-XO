@@ -1,0 +1,12 @@
+<div>
+    {{infoMessage}}
+    <div class="selectChar" ng-hide="launched">
+        <form ng-submit="startGame()" >
+            Please, select a symbol you want to use in game:
+            <label ng-class="{checked:userFace==1}"><input type="radio" name="userFace" ng-model="userFace" value="1" checked hidden />&#9932;</label> or
+            <label ng-class="{checked:userFace==0}"><input type="radio" name="userFace" ng-model="userFace" value="0" hidden />&#9774;</label><br>
+            <input type="submit" value=">>START<<" class="gamestarter" />
+        </form>
+    </div>
+    <br><button class="gamestarter" ng-click="startAgain()" ng-show="launched">>>PLAY AGAIN<<</button>
+</div>
