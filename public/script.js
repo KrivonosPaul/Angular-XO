@@ -31,7 +31,7 @@
         $scope.computerScore = 0;//initial value of computer's score
         $scope.field = JSON.parse(JSON.stringify(field));//trick to get a copy of array with objects
         $scope.launched = false;//indicates if game was started
-        $scope.infoMessage = "Choose symbol and press start!";//message on the start screen
+        $scope.infoMessage = "Choose a symbol and press start!";//message on the start screen
         var stepsCount = 9;//count of possible moves (without $scope, because will not be used on the view part)
         var userTrace = JSON.parse(JSON.stringify(playerTracer));//trick to get a copy of object
         var compTrace=JSON.parse(JSON.stringify(playerTracer));
@@ -48,7 +48,7 @@
             userTrace = JSON.parse(JSON.stringify(playerTracer));
             compTrace=JSON.parse(JSON.stringify(playerTracer));
             $scope.launched = false;
-            $scope.infoMessage = "Choose symbol and press start!";
+            $scope.infoMessage = "Choose a symbol and press start!";
             stepsCount = 9;
         };
 
@@ -194,7 +194,7 @@
 
         function computerLogic(index){//takes index of last user's step
             tracing(index,userTrace);
-            if(!compMakeStep(compTrace)&&!compMakeStep(userTrace)){
+            if(!(compMakeStep(compTrace)||compMakeStep(userTrace))){
                 outerLoop:
                 for (var k = 0; k < 3; k++) {//if step doesn't require a logic - computer goes to the first empty cell on it's way
                     for (var l = 0; l < 3; l++) {
