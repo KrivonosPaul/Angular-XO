@@ -195,18 +195,18 @@
         function computerLogic(index){//takes index of last user's step
             tracing(index,userTrace);
             if(!(compMakeStep(compTrace)||compMakeStep(userTrace))){
-                outerLoop:
-                for (var k = 0; k < 3; k++) {//if step doesn't require a logic - computer goes to the first empty cell on it's way
-                    for (var l = 0; l < 3; l++) {
-                        if ($scope.field[k][l].sign == '') {
-                            $scope.field[k][l].sign = signs[Math.abs($scope.userFace - 1)];
-                            tracing(3*k+l,compTrace);
-                            if (checkWinner(3*k+l)) {
-                                $scope.infoMessage = 'The winner is COMPUTER';
-                                $scope.computerScore++;
-                            }
-                            break outerLoop;
+                while(true){//if step doesn't require a logic - computer goes to the random cell
+                    var randomIndex=parseInt(Math.random()*9);
+                    var randomRow=parseInt(randomIndex / 3);
+                    var randomCol=randomIndex % 3;
+                    if ($scope.field[randomRow][randomCol].sign == '') {
+                        $scope.field[randomRow][randomCol].sign = signs[Math.abs($scope.userFace - 1)];
+                        tracing(randomIndex,compTrace);
+                        if (checkWinner(randomIndex)) {
+                            $scope.infoMessage = 'The winner is COMPUTER';
+                            $scope.computerScore++;
                         }
+                        break;
                     }
                 }
             }
